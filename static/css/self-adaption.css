@@ -1,0 +1,26 @@
+/* 小屏幕手机端 */
+@media (min-width: 0px) and (max-width:768px) {
+    .div1{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 768px) and (max-width:992px){
+    .div1{
+        width: 300px;
+        height: 300px;
+        background-color: blue;
+    }
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 992px) {
+    .div1 {
+        width: 500px;
+        height: 500px;
+        background-color: aqua;
+    }
+}

@@ -1,0 +1,21 @@
+certifi @ file:///C:/b/abs_ac29jvt43w/croot/certifi_1665076682579/work/certifi
+charset-normalizer==2.1.1
+click @ file:///C:/ci/click_1646038601470/work
+colorama @ file:///C:/Windows/TEMP/abs_9439aeb1-0254-449a-96f7-33ab5eb17fc8apleb4yn/croots/recipe/colorama_1657009099097/work
+Flask @ file:///C:/ci/flask_1658860110736/work
+Flask-Cors==3.0.10
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+idna==3.4
+importlib-metadata @ file:///C:/ci/importlib-metadata_1648562631189/work
+itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
+Jinja2 @ file:///C:/b/abs_7cdis66kl9/croot/jinja2_1666908141852/work
+MarkupSafe @ file:///C:/ci/markupsafe_1654508076077/work
+pymssql==2.2.7
+PyMySQL==1.0.2
+requests==2.28.1
+six==1.16.0
+typing_extensions @ file:///C:/b/abs_89eui86zuq/croot/typing_extensions_1669923792806/work
+urllib3==1.26.13
+Werkzeug @ file:///opt/conda/conda-bld/werkzeug_1645628268370/work
+wincertstore==0.2
+zipp @ file:///C:/ci/zipp_1652274072582/work

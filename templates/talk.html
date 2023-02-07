@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/Chat.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/self-adaption.css">
+  <script src="../static/js/axios.min.js"></script>
+  <script>
+    /*const replay = function(){
+        const contest = document.querySelector('input[name=contest]').value
+        console.log(contest)
+        axios.post('http://127.0.0.1:5000/user/talk/answer',{
+                contest
+            }).then(res => {//res是服务器返回的东西
+                console.log(res.data)
+                return res.data
+            })
+    }*/
+
+  window.onload = function(){
+      var arrIcon = ['',''];    //这里放文心的接口
+      var num = 0;     //控制头像改变
+      var iNow = -1;    //用来累加改变左右浮动
+      var icon = document.getElementById('user_face_icon').getElementsByTagName('img');
+      var btn = document.getElementById('btn');
+      var text = document.getElementById('text');
+      var content = document.getElementsByTagName('ul')[0];
+      var img = content.getElementsByTagName('img');
+      var span = content.getElementsByTagName('span');
+
+      const contest = document.querySelector('input[name=contest]').value
+
+      icon[0].onclick = function(){
+        if(num==0){
+          this.src = arrIcon[1];
+          num = 1;
+        }else if(num==1){
+          this.src = arrIcon[0];
+          num = 0;
+        }
+      }
+      btn.onclick = function(){
+        if(text.value ==''){
+          alert('No empty sending.');
+        }else {
+          content.innerHTML += '<li><img src="'+arrIcon[num]+'" alt=""><span>'+text.value+'</span></li>';
+          iNow++;
+          if(num==0){
+            img[iNow].className += 'imgright';
+            span[iNow].className += 'spanright';
+          }else {
+            img[iNow].className += 'imgleft';
+            span[iNow].className += 'spanleft';
+          }
+          // 内容过多时,将滚动条放置到最底端
+          content.scrollTop=content.scrollHeight;
+          const contest = document.querySelector('input[name=contest]').value
+          axios.post('http://your ip:5000/user/talk/answer',{
+                contest
+
+            }).then(res => {//res是服务器返回的东西
+                console.log(res.data)
+                content.innerHTML += '<li><img src="'+arrIcon[num]+'" alt=""><span>'+res.data+'</span></li>'
+            })
+          text.value = '';
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+<div id="container">
+  <div class="header">
+    <span style="float: left;">Campus Chat Robot</span>
+    <span style="float: right;">Time</span>
+  </div>
+  <ul class="content">
+  </ul>
+  <div class="footer">
+    <div id="user_face_icon">
+      <img src="" alt="">
+    </div>
+    <input id="text" name="contest" type="text" placeholder="Writing Something...">
+    <button type="button" id="btn">Send</button>
+  </div>
+</div>
+</body>
+</html>
